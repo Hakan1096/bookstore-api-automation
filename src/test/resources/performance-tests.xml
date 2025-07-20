@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Performance Test Suite" parallel="methods" thread-count="10">
+    <test name="Performance Tests">
+        <classes>
+            <class name="com.bookstore.tests.performance.BookApiPerformanceTests"/>
+            <class name="com.bookstore.tests.performance.AuthorApiPerformanceTests"/>
+        </classes>
+    </test>
+</suite>

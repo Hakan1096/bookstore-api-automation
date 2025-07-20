@@ -1,0 +1,32 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "idBook": 1
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "idBook": 1
+  },
+  {
+    "firstName": "Carol",
+    "lastName": "Brown",
+    "idBook": 2
+  },
+  {
+    "firstName": "David",
+    "lastName": "Davis",
+    "idBook": 3
+  },
+  {
+    "firstName": "Eve",
+    "lastName": "Miller",
+    "idBook": 4
+  },
+  {
+    "firstName": "Frank",
+    "lastName": "Wilson",
+    "idBook": 5
+  }
+]

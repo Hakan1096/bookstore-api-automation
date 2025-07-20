@@ -1,0 +1,7 @@
+{
+  "title": "Testing Special Characters: !@#$%^&*()_+-={}[]|\\:;\"'<>?,./",
+  "description": "Description with émojis: 📚📖📝 and special chars: àáâãäåæçèéêë",
+  "pageCount": 100,
+  "excerpt": "Excerpt testing unicode: ñüéîø and symbols: ™®©",
+  "publishDate": "2024-06-01T00:00:00.000Z"
+}

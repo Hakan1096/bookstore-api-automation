@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="BookstoreApiTestSuite" parallel="methods" thread-count="5" verbose="2">
+    <parameter name="environment" value="dev"/>
+    
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    
+    <test name="BookApiTests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.books.BookApiHappyPathTests"/>
+            <class name="com.bookstore.tests.books.BookApiEdgeCaseTests"/>
+            <class name="com.bookstore.tests.books.BookApiNegativeTests"/>
+        </classes>
+    </test>
+    
+    <test name="AuthorApiTests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.authors.AuthorApiHappyPathTests"/>
+            <class name="com.bookstore.tests.authors.AuthorApiEdgeCaseTests"/>
+            <class name="com.bookstore.tests.authors.AuthorApiNegativeTests"/>
+        </classes>
+    </test>
+    
+    <test name="IntegrationTests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.integration.BookAuthorIntegrationTests"/>
+        </classes>
+    </test>
+    
+    <test name="PerformanceTests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.performance.BookApiPerformanceTests"/>
+            <class name="com.bookstore.tests.performance.AuthorApiPerformanceTests"/>
+        </classes>
+    </test>
+    
+    <test name="ExamplesTests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.examples.ComprehensiveWorkflowTests"/>
+        </classes> 
+    </test>
+    
+</suite>

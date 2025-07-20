@@ -1,0 +1,65 @@
+name: Bookstore API Test Automation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Test suite to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - smoke
+          - regression
+          - performance
+
+env:
+  MAVEN_OPTS: -Xmx2048m
+  JAVA_VERSION: '11'
+
+jobs:
+  test:
+    name: API Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Run tests
+        run: mvn clean test -Dgroups="${{ github.event.inputs.test_suite }}"
+
+      - name: Generate Allure report
+        run: mvn allure:report
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: |
+            target/allure-results/
+            target/surefire-reports/
+
+      - name: Publish Allure report
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: target/allure-report

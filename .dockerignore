@@ -1,0 +1,21 @@
+# Ignore target directory
+target/
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Ignore test data
+src/main/resources/test-data/
+
+# Ignore build artifacts
+*.class
+*.jar
+*.war

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Book 1: Java Programming",
+    "description": "Comprehensive guide to Java programming",
+    "pageCount": 500,
+    "excerpt": "Learn Java from basics to advanced",
+    "publishDate": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "title": "Book 2: API Testing",
+    "description": "Master API testing with real examples",
+    "pageCount": 350,
+    "excerpt": "API testing made simple",
+    "publishDate": "2024-02-01T00:00:00.000Z"
+  },
+  {
+    "title": "Book 3: Test Automation",
+    "description": "Build robust test automation frameworks",
+    "pageCount": 400,
+    "excerpt": "Automation best practices",
+    "publishDate": "2024-03-01T00:00:00.000Z"
+  },
+  {
+    "title": "Book 4: DevOps for Testers",
+    "description": "Integrate testing into DevOps pipelines",
+    "pageCount": 300,
+    "excerpt": "DevOps and testing synergy",
+    "publishDate": "2024-04-01T00:00:00.000Z"
+  },
+  {
+    "title": "Book 5: Performance Testing",
+    "description": "Ensure your applications perform under load",
+    "pageCount": 275,
+    "excerpt": "Performance testing strategies",
+    "publishDate": "2024-05-01T00:00:00.000Z"
+  }
+]

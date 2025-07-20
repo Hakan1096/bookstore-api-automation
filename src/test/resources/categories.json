@@ -1,0 +1,22 @@
+[
+  {
+    "name": "API Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*API.*"
+  },
+  {
+    "name": "Network Issues",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*(timeout|connection).*"
+  },
+  {
+    "name": "Data Validation Errors",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*(validation|invalid data).*"
+  },
+  {
+    "name": "Infrastructure Issues",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*(docker|container|infrastructure).*"
+  }
+]
