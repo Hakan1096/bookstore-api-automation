@@ -157,8 +157,8 @@ local.properties
 #README.md
 
 # Documentation
-docs/
-*.md
+#docs/
+#*.md
 
 # IDE files
 .idea/
