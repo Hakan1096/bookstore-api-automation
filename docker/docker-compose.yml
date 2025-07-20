@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    image: openjdk:11-jdk
+    container_name: java-app
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: mvn clean install && java -jar target/app.jar
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: app_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

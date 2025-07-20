@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    image: java-app:staging
+    container_name: java-app-staging
+    environment:
+      - JAVA_OPTS=-Xmx1024m -Xms512m
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db-staging
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: stagingpassword
+      POSTGRES_DB: app_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  db_data:
